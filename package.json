@@ -2,7 +2,7 @@
   "name": "ivarsa",
   "version": "1.0.0",
   "description": "Node JS PoC for iQueue",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,8 @@
   "bugs": {
     "url": "https://github.com/rajendrag/ivarsa/issues"
   },
-  "homepage": "https://github.com/rajendrag/ivarsa#readme"
-
+  "homepage": "https://github.com/rajendrag/ivarsa#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
