@@ -1,28 +1,17 @@
 {
   "name": "ivarsa",
-  "version": "1.0.0",
-  "description": "Node JS PoC for iQueue",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rajendrag/ivarsa.git"
-  },
-  "keywords": [
-    "Node",
-    "JS",
-    "MySQL",
-    "Angular"
-  ],
-  "author": "RP",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rajendrag/ivarsa/issues"
-  },
-  "homepage": "https://github.com/rajendrag/ivarsa#readme",
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   }
 }
