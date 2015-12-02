@@ -1,0 +1,25 @@
+{
+  "name": "ivarsa",
+  "version": "1.0.0",
+  "description": "Node JS PoC for iQueue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajendrag/ivarsa.git"
+  },
+  "keywords": [
+    "Node",
+    "JS",
+    "MySQL",
+    "Angular"
+  ],
+  "author": "RP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajendrag/ivarsa/issues"
+  },
+  "homepage": "https://github.com/rajendrag/ivarsa#readme"
+}
