@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="iversa">
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-1.4.8.min.js"></script>
+
+    <script src="/javascripts/controllers/unitsController.js"></script> <!-- load up our controller -->
+    <script src="/javascripts/services/units.js"></script> <!-- load our todo service -->
+    <script src="/javascripts/core.js"></script> <!-- load our main application -->
+
   </head>
-  <body>
+  <body ng-controller="unitMainController">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,6 +38,16 @@
         
       </ul>
     </div><!-- /.navbar-collapse -->
+
+    <!-- list out all the units -->
+    <div class="container">
+        <table class="table">
+            <tr  ng-repeat="unit in units">
+               <td> {{ unit.id }}  </td><td> {{ unit.name }} </td>
+            </tr>
+        </table>
+    </div>
+    <!-- end of listing out the units -->
   </div><!-- /.container-fluid -->
 </nav>
   </body>
