@@ -41,10 +41,25 @@
 
     <!-- list out all the units -->
     <div class="container">
-        <table class="table">
+      <table id="listUnitsTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Unit Name</th>
+            <th>Description</th>
+            <th>Owner</th>
+            <th>Last Modified</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+          <tbody>
             <tr  ng-repeat="unit in units">
-               <td> {{ unit.id }}  </td><td> {{ unit.name }} </td>
+              <td>{{ unit.unit_name }}</td>
+              <td>{{ unit.description }}</td>
+              <td>{{ unit.owner }}</td>
+              <td>{{ unit.modified_datetime}}</td>
+              <td></td>
             </tr>
+          </tbody>
         </table>
     </div>
     <!-- end of listing out the units -->

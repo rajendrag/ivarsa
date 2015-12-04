@@ -22,6 +22,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//global varibale
+dbPool = require('./lib/db');
+dbPool.getConn(function(dbConn){
+    db = dbConn;
+})
 
 
 app.use('/', routes);
