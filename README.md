@@ -1,19 +1,40 @@
-##ivarsa
+iVarsa
+===================
 
-> $ cd ivarsa 
+A very simple Node js application, kind of a PoC, to demonstrate how **Node JS, Angular JS and MySQL** work together.
 
-> $ npm install
+Stack
+-----------
+- Node JS
+- Angular JS
+- MySQL
 
-##On MacOS or Linux, run the app with this command:
+Setup
+-----------
+```
+git clone https://github.com/rajendrag/ivarsa.git
+cd iversa
+npm install
+```
+>On Mac and Linux
+```
+$ DEBUG=ivarsa:* npm start
+```
+>On Windows
+```
+set DEBUG=myapp:* & npm start
+```
 
->$ DEBUG=ivarsa:* npm start
+This will start the server on port 3000, goto http://localhost:3000 to open the applicaiton.
 
-##On Windows, use this command:
+Load Testing
+-------------
+```
+siege -c100 -t1M http://localhost:3000/units
+```
+This will create 100 concurrent requests and keep hitting the server for 1 minute and gives us the statistics
 
-> set DEBUG=myapp:* & npm start
-
-Then load http://localhost:3000/ in your browser to access the app.
-
-###Contributors
-+ Rajendra
-+ Santhosh
+Contributers
+-----------
+- Rajendra
+- Santhosh
