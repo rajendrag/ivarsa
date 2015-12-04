@@ -1,1 +1,1 @@
-angular.module('iversa', ['unitController', 'unitService']);
+angular.module('ivarsa', ['unitController', 'unitService']);

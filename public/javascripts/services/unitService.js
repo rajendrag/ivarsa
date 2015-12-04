@@ -2,7 +2,7 @@ angular.module('unitService', [])
 
 	// super simple service
 	// each function returns a promise object
-	.factory('Units', ['$http',function($http) {
+	.factory('unitService', ['$http',function($http) {
 		return {
 			get : function() {
 				return $http.get('/units');

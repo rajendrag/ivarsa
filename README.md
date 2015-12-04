@@ -13,7 +13,7 @@ Setup
 -----------
 ```
 git clone https://github.com/rajendrag/ivarsa.git
-cd iversa
+cd ivarsa
 npm install
 ```
 >On Mac and Linux
