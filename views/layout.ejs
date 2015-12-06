@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <script type="text/javascript" src="/libraries/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/libraries/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/libraries/angular-1.4.8.min.js"></script>
-    <!--<script type="text/javascript" src="/libraries/angular-route-1.4.8.min.js"></script>-->
+    <script type="text/javascript" src="/libraries/angular-1.4.8.js"></script>
+    <script type="text/javascript" src="/libraries/angular-route-1.4.8.min.js"></script>
     <script src="/javascripts/controllers/unitController.js"></script> <!-- load up our controller -->
     <script src="/javascripts/services/unitService.js"></script> <!-- load our todo service -->
     <script src="/javascripts/core.js"></script> <!-- load our main application -->
 
   </head>
-  <body ng-controller="unitController">
+  <body>
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -39,31 +39,8 @@
       </ul>
     </div><!-- /.navbar-collapse -->
 
-    <!-- list out all the units -->
-    <div class="container">
-      <table id="listUnitsTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th>Unit Name</th>
-            <th>Description</th>
-            <th>Owner</th>
-            <th>Last Modified</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr  ng-repeat="unit in units">
-              <td>{{ unit.unit_name }}</td>
-              <td>{{ unit.description }}</td>
-              <td>{{ unit.owner }}</td>
-              <td>{{ unit.modified_datetime}}</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
-    <!-- end of listing out the units -->
   </div><!-- /.container-fluid -->
+      <div ng-view></div>
 </nav>
   </body>
 </html>
