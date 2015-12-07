@@ -32,7 +32,15 @@ Load Testing
 ```
 siege -c100 -t1M http://localhost:3000/units
 ```
-This will create 100 concurrent requests and keep hitting the server for 1 minute and gives us the statistics
+This will create 100 concurrent requests and keep hitting the server for 1 minute and gives us the statistics.
+
+Debuggig in Node inspector
+-------------------------
+- In one ssh session terminal, start the app directly in the foreground with ```node --debug ./bin/www```
+- v8 will try to bind to port 5858. You should see this message "debugger listening on port 5858" and NOT this message "Failed to open socket on port 5858, waiting 1000 ms before retrying
+- In a separate ssh session terminal , start the node-inspector web server node-inspector in the foreground.
+- ```http://localhost:8080/debug?port=5858```
+
 
 Contributers
 -----------

@@ -1,12 +1,9 @@
 var unitControllers = angular.module('unitControllers', []);
 	// inject the Unit service factory into our controller
-	unitControllers.controller('unitListCtrl', ['$scope', '$location', 'unitService', '$routeParams', function($scope, $location, unitService, $routeParams) {
+	unitControllers.controller('unitListCtrl', ['$scope', '$location', '$timeout', 'unitService', '$routeParams', function($scope, $location, $timeout, unitService, $routeParams) {
 		$scope.formData = {};
 		$scope.loading = true;
 
-		// GET =====================================================================
-		// when landing on the page, get all todos and show them
-		// use the service to get all the todos
 		unitService.get()
 			.success(function(data) {
 				$scope.units = data;
@@ -14,13 +11,23 @@ var unitControllers = angular.module('unitControllers', []);
 			});
 
 		$scope.viewDetails = function(unit) {
-		   //$location.path = "#/units/"+unit.iq_unit_mstr_id;
-		    window.location = "#/units/"+unit.iq_unit_mstr_id;
+		   $location.path("/units/"+unit.iq_unit_mstr_id);
+		   if(!$scope.$$phase) {
+		   	$scope.$apply();
+		   }
 		}
 
 	}]);
 
-	unitControllers.controller('unitDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+	unitControllers.controller('unitDetailCtrl', ['$scope', '$location', '$routeParams', 'unitService', function($scope,$location, $routeParams, unitService){
 	    $scope.unitId = $routeParams.unitId;
+	    unitService.getUnit($routeParams.unitId).success(function(data){
+	    	if(data && data[0]) {
+	    		$scope.unit = data[0];	
+	    	} else {
+	    		$scope.errorMessage = "Unit not found";
+	    	}
+	        
+	    });
 	}]);
 

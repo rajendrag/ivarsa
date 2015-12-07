@@ -7,11 +7,14 @@ angular.module('unitService', [])
 			get : function() {
 				return $http.get('/units');
 			},
-			create : function(todoData) {
-				return $http.post('/api/todos', todoData);
+			getUnit : function(unitId) {
+				return $http.get('/units/'+unitId);
 			},
-			delete : function(id) {
-				return $http.delete('/api/todos/' + id);
+			create : function(unitData) {
+				return $http.post('/units', todoData);
+			},
+			delete : function(unitId) {
+				return $http.delete('/units/' + unitId);
 			}
 		}
 	}]);
