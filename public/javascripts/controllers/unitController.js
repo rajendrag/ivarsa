@@ -21,7 +21,7 @@ var unitControllers = angular.module('unitControllers', []);
 
 	unitControllers.controller('unitDetailCtrl', ['$scope', '$location', '$routeParams', 'unitService', function($scope,$location, $routeParams, unitService){
 	    $scope.unitId = $routeParams.unitId;
-	    unitService.getUnit($routeParams.unitId).success(function(data){
+	    unitService.get($routeParams.unitId).success(function(data){
 	    	if(data && data[0]) {
 	    		$scope.unit = data[0];	
 	    	} else {
