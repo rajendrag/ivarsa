@@ -11,13 +11,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr  ng-repeat="unit in units">
-        <!--<tr  ng-repeat="unit in units" style="cursor:pointer">-->
+        <tr  ng-repeat="unit in units" ng-click="viewDetails(unit)" style="cursor:pointer">
             <td>{{ unit.unit_name }}</td>
             <td>{{ unit.description }}</td>
             <td>{{ unit.owner }}</td>
             <td>{{ unit.modified_datetime}}</td>
-            <td><a href="#/units/{{unit.iq_unit_mstr_id}}" class="thumb">edit</a></td>
+            <td></td>
         </tr>
         </tbody>
     </table>

@@ -1,86 +1,20 @@
-TBD: detail view for <span>{{unitId}}</span>
 <div class="container">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#">Basic Info</a></li>
-        <li><a href="#">Operating Hours</a></li>
-        <li><a href="#">Nurse Schedule</a></li>
-    </ul>
-    <div id="unitTabsPanel_main">
-        <div id="summary_panel" class="unitTabPanel ui-tabs-panel ui-widget-content ui-corner-bottom"
-             aria-labelledby="ui-id-5" role="tabpanel" aria-expanded="true" aria-hidden="false">
-            <div class="summary_form_table_div row">
-                <div class="col span_2">&nbsp;</div>
-                <div class="col span_20 summaryContent_main">
-                    <div class="form_result_div">
-                        <div class="form_result_top">
-                            <div class="form_result_icon"></div>
-                            <div class="form_result_message"></div>
-                        </div>
-                        <div class="form_result_bottom"></div>
-                    </div>
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_8 summaryFormInputLabel"><label> Whats the Unit's Name? <i
-                                class="fa fa-asterisk inputRequiredIcon"></i> </label></div>
-                        <div class="col span_14">
-                            <input class="required form-control" type="text" name="unitName" ng-model="unit.unit_name"/>
-                        </div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_8 summaryFormInputLabel">
-                            <label>Who is the Unit's Owner?</label>
-                            <label class="optionalLabel">(optional)</label>
-                        </div>
-                        <div class="col span_14"><input class="form-control" type="text" name="owner" ng-model="unit.created_by"></div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_8 summaryFormInputLabel">
-                            <label>A short description</label>
-                            <label class="optionalLabel">(optional)</label>
-                        </div>
-                        <div class="col span_14">
-                            <textarea rows="5" class="form-control" name="description" ng-model="unit.description"></textarea>
-                        </div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_8 summaryFormInputLabel">
-                            <label>How many chairs are in the Unit?</label>
-                        </div>
-                        <div class="col span_14">
-                            <input class="required numeric nodecimal form-control" style="width: 25%;" type="number"
-                                   name="noOfChairs" title="number of chairs" ng-model="unit.nof_chairs">
-                        </div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_8 summaryFormInputLabel">
-                            <label>How many beds are in the Unit?</label>
-                        </div>
-                        <div class="col span_14">
-                            <input class="required numeric nodecimal form-control" style="width: 25%;" type="number"
-                                   name="noOfBeds"  ng-model="unit.nof_beds">
-                        </div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#unitTabsPanel_main" data-toggle="tab" showtab="">Basic Info</a></li>
+            <li><a href="#unitTabsPanelOpHours" data-toggle="tab" showtab="">Operating Hours</a></li>
+            <li><a href="#unitTabsPanelNurseSch" data-toggle="tab" showtab="">Nurse Schedule</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="unitTabsPanel_main" ng-include="'angviews/unit-basic-info.html'">
 
-                    <div class="row">&nbsp;</div>
+            </div>
+            <div class="tab-pane" id="unitTabsPanelOpHours" ng-include="'angviews/unit-op-hours.html'">
 
-                    <div class="row summaryFormInputDiv">
-                        <div class="col span_22" style="border-top: 1px solid #E7E7E7; padding-top: .5em;">
-                            <input type="button" class="btn btn-success continueBtn" name="continueUnitBtn"
-                                   value="Continue"></div>
-                        <div class="col span_2">&nbsp;</div>
-                    </div>
-                </div>
+            </div>
+            <div class="tab-pane" id="unitTabsPanelNurseSch" ng-include="'angviews/unit-nurse-sch.html'">
+
             </div>
         </div>
-        <div id="hoursOfOperation_panel" class="unitTabPanel ui-tabs-panel ui-widget-content ui-corner-bottom"
-             aria-labelledby="ui-id-6" role="tabpanel" aria-expanded="false" aria-hidden="true"
-             style="display: none;"></div>
-        <div id="nurseCoverage_panel" class="unitTabPanel ui-tabs-panel ui-widget-content ui-corner-bottom"
-             aria-labelledby="ui-id-7" role="tabpanel" aria-expanded="false" aria-hidden="true"
-             style="display: none;"></div>
     </div>
 </div>
