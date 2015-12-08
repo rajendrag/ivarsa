@@ -12,11 +12,12 @@
         </thead>
         <tbody>
         <tr  ng-repeat="unit in units" ng-click="viewDetails(unit)" style="cursor:pointer">
-            <td>{{ unit.unit_name }}</td>
+        <!--<tr  ng-repeat="unit in units" style="cursor:pointer">-->
+            <td>{{ unit.unitName }}</td>
             <td>{{ unit.description }}</td>
             <td>{{ unit.owner }}</td>
             <td>{{ unit.modified_datetime}}</td>
-            <td></td>
+            <td><a href="#/units/{{unit.id}}" class="thumb">edit</a></td>
         </tr>
         </tbody>
     </table>
