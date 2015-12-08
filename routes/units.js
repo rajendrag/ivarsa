@@ -7,9 +7,9 @@ var sequelize = new Sequelize('mysql://iqueue_u:iqueue_p@$sw0rD@localhost:3306/i
 var unit = sequelize.import("../../../model/unitDo")
 
 
-/* GET users listing. */
+/* GET units listing. */
 router.get('/', function(req, res, next) {
-    unit.findAll({ where: {unitName: 'UC Health'} }).then(function(units) {
+    unit.findAll().then(function(units) {
       // unit will be the first entry of the Units table with the title 'UC Health' || null
       res.send(units);
     }).catch(function(err){
