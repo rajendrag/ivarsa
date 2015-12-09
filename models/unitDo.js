@@ -1,37 +1,37 @@
-var Sequelize = require('sequelize');
+"use strict";
 
 module.exports = function(sequelize, DataTypes) {
     return sequelize.define("Unit", {
                                       id: {
-                                              type: Sequelize.STRING,
+                                              type: DataTypes.STRING,
                                               field: 'iq_unit_mstr_id'
                                       },
                                       unitName: {
-                                            type: Sequelize.STRING,
+                                            type: DataTypes.STRING,
                                             field: 'unit_name'
                                       },
                                      owner: {
-                                             type: Sequelize.STRING,
+                                             type: DataTypes.STRING,
                                              field: 'owner'
                                      },
                                       description: {
-                                              type: Sequelize.STRING,
+                                              type: DataTypes.STRING,
                                               field: 'description'
                                       },
                                       createdBy: {
-                                                type: Sequelize.STRING,
+                                                type: DataTypes.STRING,
                                                 field: 'created_by'
                                         },
                                       modifiedBy: {
-                                               type: Sequelize.STRING,
+                                               type: DataTypes.STRING,
                                                field: 'modified_by'
                                        },
                                       nofChairs: {
-                                                type: Sequelize.INTEGER,
+                                                type: DataTypes.INTEGER,
                                                 field: 'nof_chairs'
                                       },
                                       nofBeds: {
-                                                type: Sequelize.INTEGER,
+                                                type: DataTypes.INTEGER,
                                                 field: 'nof_beds'
                                       }
 
