@@ -11,7 +11,7 @@ var unitControllers = angular.module('unitControllers', []);
 			});
 
 		$scope.viewDetails = function(unit) {
-		   $location.path("/units/"+unit.iq_unit_mstr_id);
+		   $location.path("/units/"+unit.id);
 		   if(!$scope.$$phase) {
 		   	$scope.$apply();
 		   }
@@ -22,8 +22,8 @@ var unitControllers = angular.module('unitControllers', []);
 	unitControllers.controller('unitDetailCtrl', ['$scope', '$location', '$routeParams', 'unitService', function($scope,$location, $routeParams, unitService){
 	    $scope.unitId = $routeParams.unitId;
 	    unitService.get($routeParams.unitId).success(function(data){
-	    	if(data && data[0]) {
-	    		$scope.unit = data[0];	
+	    	if(data) {
+	    		$scope.unit = data;	
 	    	} else {
 	    		$scope.errorMessage = "Unit not found";
 	    	}
