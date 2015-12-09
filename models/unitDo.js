@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
     return sequelize.define("Unit", {
                                       id: {
                                               type: DataTypes.STRING,
-                                              field: 'iq_unit_mstr_id'
+                                              field: 'iq_unit_mstr_id',
+                                              primaryKey : true
                                       },
                                       unitName: {
                                             type: DataTypes.STRING,
@@ -42,7 +43,12 @@ module.exports = function(sequelize, DataTypes) {
                                         updatedAt: 'modified_datetime',
                                         deletedAt: false,
                                         force:false,
-                                        freezeTableName: false, // Model tableName will be the same as the model name
-                                        tableName: 'iq_unit_mstr'
-                                    })
+                                        freezeTableName: true, // Model tableName will be the same as the model name
+                                        tableName: 'iq_unit_mstr',
+                                        classMethods: {
+                                              associate: function(models) {
+                                                models.Unit.hasMany(models.UnitOpHours, {foreignKey: "iq_unit_mstr_id"})
+                                              }
+                                        }
+                                    });
 }

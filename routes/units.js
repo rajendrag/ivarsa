@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/:unitId', function(req, res, next) {
 
-    UnitDAO.findOne({ where: {id: req.params.unitId} }).then(function(unit) {
+    UnitDAO.findOne({ where: {id: req.params.unitId}, include: [ models.UnitOpHours ] }).then(function(unit) {
       res.send(unit);
     }).catch(function(err){
         console.log(err);

@@ -20,6 +20,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                    <tr ng-repeat="day in unit.UnitOpHours">
+                        <td>{{day.day}}</td>
+                        <td>{{day.fromTime}}</td>
+                        <td>{{day.untilTime}}</td>
+                        <td>{{day.lastApptTime}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
