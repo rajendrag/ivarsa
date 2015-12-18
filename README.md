@@ -1,13 +1,14 @@
 iVarsa
 ===================
 
-A very simple Node js application, kind of a PoC, to demonstrate how **Node JS, Angular JS and MySQL** work together.
+A very simple Node js application, kind of a PoC, to demonstrate how **Node JS** can be used as a front server in a micro services architecture.
+
+This server will serve the static files and html templates to *Angular 2* and all the api calls will be proxied and redirected to the backend micro services.
 
 Stack
 -----------
 - Node JS
 - Angular JS
-- MySQL
 
 Setup
 -----------
@@ -38,7 +39,7 @@ Debuggig in Node inspector
 -------------------------
 - In one ssh session terminal, start the app directly in the foreground with ```node --debug ./bin/www```
 - v8 will try to bind to port 5858. You should see this message "debugger listening on port 5858" and NOT this message "Failed to open socket on port 5858, waiting 1000 ms before retrying
-- In a separate ssh session terminal , start the node-inspector web server node-inspector in the foreground.
+- In a separate ssh session terminal , start the node-inspector web server by issuing ```node-inspector``` in the foreground.
 - ```http://localhost:8080/debug?port=5858```
 
 

@@ -1,17 +1,17 @@
-var ivarsaApp = angular.module('ivarsa', ['ngRoute', 'unitControllers', 'unitService']);
+var ivarsaApp = angular.module('ivarsa', ['ngRoute', 'unitControllers', 'unitService', 'angular.filter']);
 ivarsaApp.config(['$routeProvider',
                    function($routeProvider) {
                      $routeProvider.
-                       when('/units', {
+                       when('/api/units', {
                          templateUrl: 'angviews/unit-list.html',
                          controller: 'unitListCtrl'
                        }).
-                       when('/units/:unitId', {
+                       when('/api/units/:unitId', {
                          templateUrl: 'angviews/unit-details.html',
                          controller: 'unitDetailCtrl'
                        }).
                        otherwise({
-                         redirectTo: '/units'
+                         redirectTo: '/api/units'
                        });
                    }]);
 

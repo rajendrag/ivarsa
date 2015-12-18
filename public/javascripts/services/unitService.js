@@ -9,17 +9,17 @@ angular.module('unitService', [])
 		    */
 			get : function(unitId) {
 				if(unitId) {
-					return $http.get('/units/'+unitId);	
+					return $http.get('/api/units/'+unitId);
 				} else {
-					return $http.get('/units');
+					return $http.get('/api/units');
 				}
 				
 			},
 			create : function(unitData) {
-				return $http.post('/units', todoData);
+				return $http.post('/api/units', todoData);
 			},
 			delete : function(unitId) {
-				return $http.delete('/units/' + unitId);
+				return $http.delete('/api/units/' + unitId);
 			}
 		}
 	}]);

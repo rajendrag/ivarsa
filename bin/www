@@ -6,7 +6,6 @@
 
 var app = require('../app');
 var debug = require('debug')('ivarsa:server');
-var models = require("../models");
 
 var http = require('http');
 
@@ -17,7 +16,7 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-models.sequelize.sync();
+//models.sequelize.sync();
 
 /**
  * Create HTTP server.

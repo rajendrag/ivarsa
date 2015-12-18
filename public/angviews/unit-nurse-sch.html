@@ -16,14 +16,22 @@
                     <th style="width:15%"></th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody ng-repeat="(key, value) in unit.nurseCoverage | groupBy: 'day'">
+                    <tr ng-repeat="sch in value">
+                        <td rowspan="{{value.length}}" ng-if="!($index%value.length)">{{key}}</td>
+                        <td>{{sch.startTime}}</td>
+                        <td>{{sch.endTime}}</td>
+                        <td>{{sch.shiftLength}}</td>
+                        <td>{{sch.noOfNurses}}</td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="nurseCoverageButtonDiv">
         <input type="button" class="btn btn-success continueBtn" style="float:right; margin:15px 0px;" name="doneBtn"
-               value="<@= dictionary.main.section_center.nurse_coverage_section.buttons.done @>"/>
+               value="Save"/>
 
         <div>
             <div class="col span_1">&nbsp;</div>

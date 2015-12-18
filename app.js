@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var units = require('./routes/units');
+var api_redirect = require('./routes/api_redirect');
 
 var app = express();
 // view engine setup
@@ -22,16 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//global varibale
-/*dbPool = require('./lib/db');
-dbPool.getConn(function(dbConn){
-    db = dbConn;
-})*/
-
-
 app.use('/', routes);
-app.use('/users', users);
-app.use('/units', units);
+app.use('/api', api_redirect);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

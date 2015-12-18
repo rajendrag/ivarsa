@@ -11,7 +11,7 @@ var unitControllers = angular.module('unitControllers', []);
 			});
 
 		$scope.viewDetails = function(unit) {
-		   $location.path("/units/"+unit.id);
+		   $location.path("/api/units/"+unit.id);
 		   if(!$scope.$$phase) {
 		   	$scope.$apply();
 		   }
