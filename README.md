@@ -3,8 +3,7 @@ iVarsa
 
 A very simple Node js application, kind of a PoC, to demonstrate how **Node JS** can be used as a front server in a micro services architecture.
 
-This server will serve the static files and html templates to *Angular 2* and all the api calls will be proxied and redirected to the backend micro services.
-
+This server will serve the static files and html templates to *Angular 2* and all the api calls will be proxied and redirected to the backend micro services. One such service is here https://github.com/rajendrag/ivarsa-play
 Stack
 -----------
 - Node JS
